@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template: 72px 1fr 50px / 1fr;
+  /* grid-template: 72px minmax(0, 1fr) 50px / auto; */
+  grid-template-areas:
+    'header'
+    'scrollable'
+    'footer';
+  max-height: 100%;
+}
+
+header {
+  grid-area: header;
+  background-color: blue;
+}
+
+.scrollable {
+  grid-area: scrollable;
+  overflow: scroll;
+}
+
+.scrollable > .overflow {
+  background: linear-gradient(teal, yellow);
+  height: 3000px;
+}
+
+footer {
+  grid-area: footer;
+  background-color: red;
+}
